@@ -22,3 +22,5 @@ Good luck!
 
 For any questions and/or suggestions, contact folkert@vanheusden.com or jan@beebeec.nl
 Consider using PGP (Folkert's key-ID is 0x1f28d8ae).
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=flok&url=https://github.com/flok99/sgwi&title=sgwi&language=&tags=github&category=software)
