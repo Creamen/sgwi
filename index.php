@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	index.php
 Purpose: 	Renders the main menu page
-Version: 	1.1.7
+Version: 	1.1.8
 *********************************************/
 
 	require "includes/functions.inc.php";

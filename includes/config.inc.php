@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	config.inc.php
 Purpose: 	Configuration of database and options
-Version: 	1.1.7
+Version: 	1.1.8
 ****************************************************/
 
 /* Database settings */

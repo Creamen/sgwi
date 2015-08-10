@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	awl.inc.php
 Purpose: 	Functions for awl.php (whitelists)
-Version: 	1.1.7
+Version: 	1.1.8
 ****************************************************/
 
 function add_sender($mode, $sendername, $senderdomain, $src) {

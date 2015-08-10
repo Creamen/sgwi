@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	awl.php
 Purpose: 	Renders the greylist page
-Version: 	1.1.7
+Version: 	1.1.8
 *********************************************/
 
 	require "includes/functions.inc.php";

@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	opt_in_out.inc.php
 Purpose: 	Opt in/out functions
-Version: 	1.1.7
+Version: 	1.1.8
 ***************************************/
 
 	if ($_GET["direction"] == "out") {

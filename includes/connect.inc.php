@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	connect.inc.php
 Purpose: 	Functions for connect.php (greylist)
-Version: 	1.1.7
+Version: 	1.1.8
 ****************************************************/
 
 function forget_entry($sendername, $senderdomain, $src, $rcpt) {

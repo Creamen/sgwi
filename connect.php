@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	connect.php
 Purpose: 	Renders the email/domains pages
-Version: 	1.1.7
+Version: 	1.1.8
 ************************************************/
 
 	require "includes/functions.inc.php";

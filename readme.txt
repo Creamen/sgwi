@@ -5,6 +5,7 @@ Installation and What you should do:
 
 
 History:
+v.1.1.8 SQLite3 support
 v.1.1.7 PHP code: mysqli functions replace deprecated mysql functions.
 v.1.1.6 PHP code now compatible with PHP 5.4.xx.
 v.1.1.5 Bugfix: optin-optout did not show tables when using postgresql.

@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	opt_in_out.php
 Purpose: 	Renders the optin/out pages
-Version: 	1.1.7
+Version: 	1.1.8
 *********************************************/
 
 	require "includes/functions.inc.php";
