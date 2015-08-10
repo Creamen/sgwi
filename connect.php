@@ -4,17 +4,17 @@
 SQLgrey Web Interface
 Filename:	connect.php
 Purpose: 	Renders the email/domains pages
-Version: 	1.1.6
+Version: 	1.1.7
 ************************************************/
 
 	require "includes/functions.inc.php";
 	require "includes/connect.inc.php";
 	
-	(isset($_GET["action"])) ? $action = $_GET["action"] : $action = "";
+	isset($_GET["action"]) ? $action = $_GET["action"] : $action = "";
 	
 	// For sort order.
-	(isset($_GET["csort"])) ? $csort = $_GET["csort"] : $csort = "";
-	(isset($_GET["sort"])) ? $sort = $_GET["sort"] : $sort = "";
+	isset($_GET["csort"]) ? $csort = $_GET["csort"] : $csort = "";
+	isset($_GET["sort"]) ? $sort = $_GET["sort"] : $sort = "";
 	if ($sort==null || $sort=="") {
 		$sort = "sender_name";
 	}
@@ -30,8 +30,8 @@ Version: 	1.1.6
 	$report2 = "";
 	switch ($action) {
     		case "act":
-    			(isset($_POST["acttype"])) ? $acttype = $_POST["acttype"] : $acttype = "";
-	    		(isset($_POST["chk"])) ? $chk = $_POST["chk"] : $chk = "";
+    			isset($_POST["acttype"]) ? $acttype = $_POST["acttype"] : $acttype = "";
+	    		isset($_POST["chk"]) ? $chk = $_POST["chk"] : $chk = "";
 	    		switch ($acttype) {
 	            		case "dodelete":
 			        // For batch deleting.
@@ -76,7 +76,7 @@ Version: 	1.1.6
 			else if ($day < 1 || $day > 31) $err = 1;
 			else if ($hour < 0 || $hour > 23) $err = 1;
 			else if ($minute < 0 || $minute > 59) $err = 1;
-			else if ($seconds < 0 || $seconds > 60) $err = 1; # indeed, 60
+			else if ($seconds < 0 || $seconds > 60) $err = 1; # 60 indeed...
 			
 	        	del_older_than($year, $month, $day, $hour, $minute, $seconds, $err);
 			$report2 = $message.$warning; 
@@ -221,7 +221,7 @@ Version: 	1.1.6
 	<?php if (! $report2 == '' ) echo '<span class="alert">'.$report2.'</span>'; ?>
 	
 	<div id="footer">
-	<?php require "includes/copyright.inc.php" ?>
+		<?php include "includes/copyright.inc.php" ?>
 	</div>
 
 </div>

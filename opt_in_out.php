@@ -4,15 +4,15 @@
 SQLgrey Web Interface
 Filename:	opt_in_out.php
 Purpose: 	Renders the optin/out pages
-Version: 	1.1.6
+Version: 	1.1.7
 *********************************************/
 
 	require "includes/functions.inc.php";
 	require "includes/opt_in_out.inc.php";
 	
-	(isset($_GET["direction"])) ? $direction = $_GET["direction"] : $direction = "out";
-	(isset($_GET["what"])) ? $what = $_GET["what"] : $what = "domain";
-	(isset($_GET["action"])) ? $action = $_GET["action"] : $action = "";
+	isset($_GET["direction"]) ? $direction = $_GET["direction"] : $direction = "out";
+	isset($_GET["what"]) ? $what = $_GET["what"] : $what = "domain";
+	isset($_GET["action"]) ? $action = $_GET["action"] : $action = "";
 	
 	//  Add some explanation.
 	if ($direction == "out") {
@@ -96,7 +96,7 @@ Version: 	1.1.6
 	<br />
 	
 	<div id="footer" style="width: 800px">
-	<?php require "includes/copyright.inc.php" ?>
+		<?php include "includes/copyright.inc.php" ?>
 	</div>
 
 </div>

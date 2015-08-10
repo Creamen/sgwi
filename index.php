@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	index.php
 Purpose: 	Renders the main menu page
-Version: 	1.1.6
+Version: 	1.1.7
 *********************************************/
 
 	require "includes/functions.inc.php";
@@ -69,7 +69,6 @@ Version: 	1.1.6
 				<td colspan="3">&nbsp;</td>
 			</tr>
 			<tr>
-
 				<td colspan="3">Auto-whitelisted (hosts / domains that have passed greylisting)</td>
 			</tr>
 			<tr>
@@ -136,7 +135,7 @@ Version: 	1.1.6
     </table>
 
     <div id="footer" style="width: 800px;">
-	<?php require "includes/copyright.inc.php" ?>
+	<?php include "includes/copyright.inc.php" ?>
     </div>
 
 </div>

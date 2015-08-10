@@ -4,18 +4,18 @@
 SQLgrey Web Interface
 Filename:	awl.php
 Purpose: 	Renders the greylist page
-Version: 	1.1.6
+Version: 	1.1.7
 *********************************************/
 
 	require "includes/functions.inc.php";
 	require "includes/awl.inc.php";
 
-	(isset($_GET["mode"])) ? $mode = $_GET["mode"] : $mode = "email";
-	(isset($_GET["action"])) ? $action = $_GET["action"] : $action = "";
+	isset($_GET["mode"]) ? $mode = $_GET["mode"] : $mode = "email";
+	isset($_GET["action"]) ? $action = $_GET["action"] : $action = "";
 	
 	// For sort order.
-	(isset($_GET["csort"])) ? $csort = $_GET["csort"] : $csort = "";
-	(isset($_GET["sort"])) ? $sort = $_GET["sort"] : $sort = "";
+	isset($_GET["csort"]) ? $csort = $_GET["csort"] : $csort = "";
+	isset($_GET["sort"]) ? $sort = $_GET["sort"] : $sort = "";
 	if ($sort==null || $sort=="") {
 		if ($mode == "email") {
 			$sort = "sender_name";
@@ -35,7 +35,7 @@ Version: 	1.1.6
 	switch ($action) {
     		case "del_selection":
 	        	// For batch deleting.
-			(isset($_POST["chk"])) ? $chk = $_POST["chk"] : $chk = "";
+			isset($_POST["chk"]) ? $chk = $_POST["chk"] : $chk = "";
 			if ($chk == "") {
 				$report = '<br />Nothing was selected - nothing has been deleted.'.$clearit;
 			} else {
@@ -53,7 +53,7 @@ Version: 	1.1.6
 	        	$report2 = $message;
 	        	break;
     		case "add_sender":
-	    		(isset($_POST["sender_name"])) ? $sn = $_POST["sender_name"] : $sn = "";
+	    		isset($_POST["sender_name"]) ? $sn = $_POST["sender_name"] : $sn = "";
 	        	add_sender($mode, $sn, $_POST["sender_domain"], $_POST["src"]);
 	        	$report = "";
 			$report2 = $added;
@@ -241,7 +241,7 @@ Version: 	1.1.6
 	<?php if (! $report2 == '' ) echo '<span class="alert">'.$report2.'</span>'; ?>
 		
 	<div id="footer">
-	<?php require "includes/copyright.inc.php" ?>
+		<?php include "includes/copyright.inc.php" ?>
 	</div>
 
 </div>

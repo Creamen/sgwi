@@ -1,10 +1,11 @@
-What you should do:
-- put the files somewhere in your website;
+Installation and What you should do:
+- put the files somewhere in your website (f.i. var/www);
 - edit includes/config.inc.php to your needs;
-- make sure you shield things with a .htaccess file!
+- make sure you shield things with a .htaccess file (Require valid-user)!
 
 
 History:
+v.1.1.7 PHP code: mysqli functions replace deprecated mysql functions.
 v.1.1.6 PHP code now compatible with PHP 5.4.xx.
 v.1.1.5 Bugfix: optin-optout did not show tables when using postgresql.
 v.1.1.4 Explanation of optin-optout improved.
@@ -22,5 +23,3 @@ Good luck!
 
 For any questions and/or suggestions, contact folkert@vanheusden.com or jan@beebeec.nl
 Consider using PGP (Folkert's key-ID is 0x1f28d8ae).
-
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=flok&url=https://github.com/flok99/sgwi&title=sgwi&language=&tags=github&category=software)

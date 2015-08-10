@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	connect.inc.php
 Purpose: 	Functions for connect.php (greylist)
-Version: 	1.1.6
+Version: 	1.1.7
 ****************************************************/
 
 function forget_entry($sendername, $senderdomain, $src, $rcpt) {
@@ -44,7 +44,6 @@ function del_older_than($year, $month, $day, $hour, $minute, $seconds, $err) {
 		$message = 'Entries older than '.$nicedate.' deleted.';
 		$warning = "<br />Sorting set to &#39;Seen at&#39; (ascending).";
 	}
-
 }
 
 ?>

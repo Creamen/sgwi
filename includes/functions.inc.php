@@ -2,9 +2,9 @@
 
 /***********************************************************
 SQLgrey Web Interface
-Filename:	awl.inc.php
-Purpose: 	Database and navigation and other functions
-Version: 	1.1.6
+Filename:	functions.inc.php
+Purpose: 	Database, navigation and other functions
+Version: 	1.1.7
 ************************************************************/
 
 require "config.inc.php";
@@ -23,13 +23,11 @@ function do_query($query) {
         global $db_hostname, $db_user, $db_pass, $db_db, $db_type;
         /* Connecting, selecting database */
 	if ($db_type == "mysql") {
-		$link = mysql_connect($db_hostname, $db_user, $db_pass) or die("Could not connect to database");
-		mysql_select_db($db_db) or die("Could not select database");
-
-		$result = mysql_query($query) or die("Query failed");
+		$link = new mysqli($db_hostname, $db_user, $db_pass, $db_db) or die("Error " . mysqli_error($link));
+		$result = $link->query($query) or die("Error in the consult " . mysqli_error($link));
 
 		/* Closing connection */
-		mysql_close($link);
+		mysqli_close($link);
 	} else {
 		$link = pg_connect("host=$db_hostname dbname=$db_db user=$db_user password=$db_pass") or die("Could not connect to database");
 
@@ -44,7 +42,7 @@ function do_query($query) {
 function fetch_row($result) {
 	global $db_type;
 	if ($db_type == "mysql") {
-		return mysql_fetch_array($result, MYSQL_ASSOC);
+		return $result->fetch_array(MYSQLI_ASSOC);
 	} else {
 		return pg_fetch_assoc($result);
 	}
