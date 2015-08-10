@@ -8,11 +8,12 @@ Version: 	1.1.7
 ****************************************************/
 
 /* Database settings */
-$db_hostname	= "localhost";
+#$db_hostname	= "/var/lib/sqlgrey/sqlgrey.db";  // path to dbfile for sqlite
+$db_hostname 	= "localhost";
 $db_db		= "sqlgrey";
 $db_user	= "greylist";
 $db_pass	= "greylist";
-$db_type	= "mysql";	// "mysql" or "pg" (postgresql)
+$db_type	= "mysql";	// "mysql", "pg" (postgresql) or experimental "sqlite"
 
 /* Set close_btn to 'yes' to enable the close button in index.php (main menu)
    the button action = ../ which could be a security issue

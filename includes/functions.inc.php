@@ -24,10 +24,18 @@ function do_query($query) {
         /* Connecting, selecting database */
 	if ($db_type == "mysql") {
 		$link = new mysqli($db_hostname, $db_user, $db_pass, $db_db) or die("Error " . mysqli_error($link));
-		$result = $link->query($query) or die("Error in the consult " . mysqli_error($link));
+		$result = $link->query($query) or die("Error in the query: " . mysqli_error($link));
 
 		/* Closing connection */
 		mysqli_close($link);
+	} elseif ($db_type == "sqlite") {
+		$link = new SQLite3($db_hostname) or die("Error "  . $link->lastErrorMsg());
+
+	        $result = $link->query($query) or die("Error in the query: " . $link->lastErrorMsg() .  " - Query: " . $query );
+
+		/* Closing connection */
+		$link->close;
+
 	} else {
 		$link = pg_connect("host=$db_hostname dbname=$db_db user=$db_user password=$db_pass") or die("Could not connect to database");
 
@@ -43,6 +51,8 @@ function fetch_row($result) {
 	global $db_type;
 	if ($db_type == "mysql") {
 		return $result->fetch_array(MYSQLI_ASSOC);
+	} elseif ($db_type == "sqlite") {
+		return $result->fetchArray(SQLITE3_ASSOC);
 	} else {
 		return pg_fetch_assoc($result);
 	}
@@ -121,8 +131,7 @@ function strip_millisecs($ts) {
 	// Formats timestamp without milliseconds.
 	global $no_millisecs;
 	if ($no_millisecs == "yes") {
-		$ts = date_create($ts);
-		$ts = date_format($ts, 'Y-m-d H:i:s');
+		$ts=strftime('%Y-%m-%d %H:%M:%S', $ts);
 	}
 	return $ts;
 }
