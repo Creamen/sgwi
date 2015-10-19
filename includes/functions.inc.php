@@ -4,7 +4,7 @@
 SQLgrey Web Interface
 Filename:	functions.inc.php
 Purpose: 	Database, navigation and other functions
-Version: 	1.1.8
+Version: 	1.1.8a
 ************************************************************/
 
 require "config.inc.php";
