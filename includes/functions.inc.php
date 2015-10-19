@@ -131,7 +131,7 @@ function strip_millisecs($ts) {
 	// Formats timestamp without milliseconds.
 	global $no_millisecs;
 	if ($no_millisecs == "yes") {
-		$ts=strftime('%Y-%m-%d %H:%M:%S', $ts);
+		$ts=strftime('%Y-%m-%d %H:%M:%S', strtotime($ts));
 	}
 	return $ts;
 }
