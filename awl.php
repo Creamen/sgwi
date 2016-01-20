@@ -183,7 +183,7 @@ Version: 	1.1.8
 					}
 					echo ('
 						<td width="240"><span title="'.$sd.'">'.shorten_it($sd, 35).'</span></td>
-						<td width="100">'.$src.'</td>
+						<td width="100"><span title="'.$src.'">'.shorten_it($src, 15).'</span></td>
 						<td width="120">'.strip_millisecs($fs).'</td>
 						<td width="120">'.strip_millisecs($ls).'</td>
 					</tr>
