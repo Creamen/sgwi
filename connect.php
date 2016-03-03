@@ -167,7 +167,7 @@ Version: 	1.1.8
 					<td width="20"><input type="checkbox" name="chk[]" value="'.$sn.'@@'.$sd.'@@'.$src.'@@'.$sr.'" /></td>
 				    	<td width="210"><span title="'.$sn.'">'.shorten_it($sn, 30).'</span></td>
 			    		<td width="190"><span title="'.$sd.'">'.shorten_it($sd, 30).'</span></td>
-			    		<td width="100">'.$src.'&nbsp;</td>
+			    		<td width="100"><span title="'.$src.'">'.shorten_it($src, 15).'</span>&nbsp;</td>
 					<td width="260"><span title="'.$sr.'">'.shorten_it($sr, 40).'</span></td>
 					<td width="120">'.strip_millisecs($fs).'</td>
 				</tr>
